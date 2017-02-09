@@ -1,3 +1,3 @@
-# Navii
+# Vissualise
 
-* An indoor localisation and navigation system *
+*GitHub issues, visualised.*
