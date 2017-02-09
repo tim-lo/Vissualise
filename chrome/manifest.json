@@ -1,0 +1,36 @@
+{
+  "author": "Thomas Li",
+  "background": {
+    "scripts": ["js/main.js"]
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "img/v_16.png",
+      "24": "img/v_24.png",
+      "32": "img/v_32.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Vissualise"
+  },
+  "content_scripts": [
+    {
+      "exclude_matches": ["https://github.com/pages/*"],
+      "js": ["js/main.js"],
+      "matches": ["https://*.github.com/*"],
+      "run_at": "document_end"
+    }
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "defaut_locale": "en",
+  "description": "GitHub issues, visualised.",
+  "icons": {
+    "16": "img/v_16.png",
+    "48": "img/v_48.png",
+    "128": "img/v_128.png"
+  },
+  "manifest_version": 2,
+  "name": "Vissualise",
+  "permissions": ["storage"],
+  "version": "0.0.1",
+  "web_accessible_resources": ["css/*", "img/*", "js/*"]
+}
