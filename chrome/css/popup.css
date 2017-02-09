@@ -1,0 +1,9 @@
+.popup-container {
+  padding-bottom: 16px;
+  border-bottom: #F05133 5px solid;
+}
+
+.popup-btn-img {
+  width: 20px;
+  height: auto;
+}
