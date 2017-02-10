@@ -1,6 +1,11 @@
+body {
+  border-bottom: #F05133 5px solid;
+  width: 200px;
+  margin: 0px;
+}
+
 .popup-container {
   padding-bottom: 16px;
-  border-bottom: #F05133 5px solid;
 }
 
 .popup-btn-img {
