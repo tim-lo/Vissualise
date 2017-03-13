@@ -14,8 +14,18 @@
   },
   "content_scripts": [
     {
+      "css": ["css/vissualise.css"],
       "exclude_matches": ["https://github.com/pages/*"],
-      "js": ["js/main.js"],
+      "matches": ["https://*.github.com/*"],
+      "run_at": "document_start"
+    }, {
+      "exclude_matches": ["https://github.com/pages/*"],
+      "js": ["js/plotly-1.24.2.min.js"],
+      "matches": ["https://*.github.com/*"],
+      "run_at": "document_end"
+    }, {
+      "exclude_matches": ["https://github.com/pages/*"],
+      "js": ["js/vissualise.js"],
       "matches": ["https://*.github.com/*"],
       "run_at": "document_end"
     }
@@ -30,7 +40,7 @@
   },
   "manifest_version": 2,
   "name": "Vissualise",
-  "permissions": ["storage", "tabs"],
+  "permissions": ["storage", "tabs", "activeTab"],
   "version": "0.0.1",
   "web_accessible_resources": ["css/*", "img/*", "js/*"]
 }
