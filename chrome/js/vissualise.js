@@ -11,26 +11,26 @@ var vTab = document.createElement("a");
 vTab.setAttribute("href", "#vissues");
 vTab.setAttribute("class", "reponav-item v-reponav-item");
 vTab.setAttribute("itemprop", "url");
-var vTabIcon = document.createElement("svg");
+var vTabIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 vTabIcon.setAttribute("aria-hidden", "true");
 vTabIcon.setAttribute("class", "octicon v-tab-icon");
 vTabIcon.setAttribute("height", "16");
-vTabIcon.setAttribute("viewBox", "0 0 16 16");
+vTabIcon.setAttribute("viewBox", "0 0 80 80");
 vTabIcon.setAttribute("width", "16");
-vTabIcon.innerHTML = "<path fillrule='evenodd' path d='M59.38,12.34A10,10,0,0,0,50.08,26L38.34,37.73a9.9,9.9,0,0,0-7.29,0L19.3,26a10,10,0,1,0-5.66,5.66L25.39,43.39a10,10,0,1,0,18.61,0L55.73,31.65A10,10,0,1,0,59.38,12.34Z'></path>";
+vTabIcon.innerHTML = "<path fillrule='evenodd' d='M59.38,12.34A10,10,0,0,0,50.08,26L38.34,37.73a9.9,9.9,0,0,0-7.29,0L19.3,26a10,10,0,1,0-5.66,5.66L25.39,43.39a10,10,0,1,0,18.61,0L55.73,31.65A10,10,0,1,0,59.38,12.34Z'></path>";
 var vTabName = document.createElement("span");
 vTabName.setAttribute("itemprop", "name");
 vTabName.innerHTML = "Vissues";
 var vTabMeta = document.createElement("meta");
 vTabMeta.setAttribute("itemprop", "position");
 vTabMeta.setAttribute("position", "4");
-vTab.append(vTabIcon);
-vTab.append(vTabName);
-vTab.append(vTabMeta);
-vTabContainer.append(vTab);
+vTab.appendChild(vTabIcon);
+vTab.appendChild(vTabName);
+vTab.appendChild(vTabMeta);
+vTabContainer.appendChild(vTab);
 repoNav.insertBefore(vTabContainer, repoNav.children[3]);
 
-// Clear content container & add graph
+// Clear content container
 var contentWrapper = document.querySelector(".container.new-discussion-timeline.experiment-repo-nav");
 while (contentWrapper.childElementCount > 0) {
   contentWrapper.lastElementChild.remove();
@@ -47,6 +47,7 @@ t2.setAttribute("style", "margin-left:80px;");
 contentContainer.append(t1);
 contentContainer.append(t2);
 
+// Graph time!
 var myPlot = document.getElementById('myDiv');
 var hoverInfo = document.getElementById('hoverinfo');
 var d3 = Plotly.d3;
