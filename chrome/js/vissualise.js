@@ -2,26 +2,38 @@
 
 // Add Vissues button to github page
 var repoNav = document.querySelector(".reponav.js-repo-nav.js-sidenav-container-pjax");
-// console.log("Repository navgation: " + repoNav.childElementCount);
+console.log(repoNav.childElementCount + " tabs");
 var vTabContainer = document.createElement("span");
 vTabContainer.setAttribute("itemscope", null);
 vTabContainer.setAttribute("itemtype", "http://schema.org/ListItem");
 vTabContainer.setAttribute("itemprop", "itemListElement");
 var vTab = document.createElement("a");
 vTab.setAttribute("href", "#vissues");
-vTab.setAttribute("class", "reponav-item");
+vTab.setAttribute("class", "reponav-item v-reponav-item");
 vTab.setAttribute("itemprop", "url");
+var vTabIcon = document.createElement("svg");
+vTabIcon.setAttribute("aria-hidden", "true");
+vTabIcon.setAttribute("class", "octicon v-tab-icon");
+vTabIcon.setAttribute("height", "16");
+vTabIcon.setAttribute("viewBox", "0 0 16 16");
+vTabIcon.setAttribute("width", "16");
+vTabIcon.innerHTML = "<path fillrule='evenodd' path d='M59.38,12.34A10,10,0,0,0,50.08,26L38.34,37.73a9.9,9.9,0,0,0-7.29,0L19.3,26a10,10,0,1,0-5.66,5.66L25.39,43.39a10,10,0,1,0,18.61,0L55.73,31.65A10,10,0,1,0,59.38,12.34Z'></path>";
 var vTabName = document.createElement("span");
 vTabName.setAttribute("itemprop", "name");
 vTabName.innerHTML = "Vissues";
+var vTabMeta = document.createElement("meta");
+vTabMeta.setAttribute("itemprop", "position");
+vTabMeta.setAttribute("position", "4");
+vTab.append(vTabIcon);
 vTab.append(vTabName);
+vTab.append(vTabMeta);
 vTabContainer.append(vTab);
 repoNav.insertBefore(vTabContainer, repoNav.children[3]);
 
 // Clear content container & add graph
 var contentWrapper = document.querySelector(".container.new-discussion-timeline.experiment-repo-nav");
-while (contentWrapper.hasChildNodes) {
-  contentWrapper.removeChild(contentWrapper.lastChild);
+while (contentWrapper.childElementCount > 0) {
+  contentWrapper.lastElementChild.remove();
 }
 var contentContainer = document.createElement("div");
 contentContainer.setAttribute("class", "repository-content");
