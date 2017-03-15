@@ -1,7 +1,7 @@
 {
   "author": "Thomas Li",
   "background": {
-    "scripts": ["js/main.js"]
+    "page": "background.html"
   },
   "browser_action": {
     "default_icon": {

@@ -1,6 +1,6 @@
 'use strict';
 
-// Add Vissues button to github page
+// Add Vissues tab to github page
 var repoNav = document.querySelector(".reponav.js-repo-nav.js-sidenav-container-pjax");
 console.log(repoNav.childElementCount + " tabs");
 var vTabContainer = document.createElement("span");
@@ -61,7 +61,7 @@ var data = [ { x:x, y:y1, type:'scatter', name:'Trial 1',
     mode:'markers', marker:{size:16} } ];
 var layout = { 
     hovermode:'closest',
-    title:'Hover on Points'
+    title:'Issues'
   };
 
 Plotly.plot('myDiv', data, layout);
