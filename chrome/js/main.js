@@ -6,6 +6,9 @@ chrome.runtime.onConnect.addListener((port) => {
     if (msg.body == "Hello backend!")
       port.postMessage({body: "Hello frontend!"});
     console.log("Frontend successfully connected!");
+    chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, (tabs) => {
+      console.log("Current tab url: " + tabs[0].url);
+    });
   })
 });
 

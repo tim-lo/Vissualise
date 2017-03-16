@@ -1,17 +1,18 @@
 body {
   border-bottom: #F05133 5px solid;
+  box-sizing: border-box;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 18px;
   margin: 0px;
   width: 280px;
-}
-
-.popup-container {
-  /*padding: 10px 0;*/
 }
 
 .popup-nav {
   align-items: center;
   background-color: #F05133;
-  box-sizing: border-box;
   display: flex;
   height: 64px;
   padding: 0 18px;
@@ -23,25 +24,14 @@ body {
 
 .popup-logo-text {
   color: white;
-  font-family: "Roboto","Helvetica","Arial",sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 18px;
   text-transform: uppercase;
 }
 
 .popup-btn {
   align-items: center;
   background-color: #f5f5f5;
-  box-sizing: border-box;
-  color: #000000;
+  color: #24292e;
   display: flex;
-  font-family: "Roboto","Helvetica","Arial",sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 18px;
   padding: 18px;
   text-decoration: none !important;
   text-transform: uppercase;
@@ -58,4 +48,10 @@ body {
 
 .popup-btn-img {
   margin-right: 22px;
+}
+
+.authenticated {
+  display: block;
+  padding: 18px;
+  text-align: center;
 }
